@@ -8,7 +8,7 @@ Service层
   Result selectBySearch(Integer page, Integer limit);  
 实现层  
   @Override  
-    public ResultBody selectBySearchInteger page, Integer limit) {  
+    public Result selectBySearchInteger page, Integer limit) {  
         Page<T> iPage = new Page<>((page != null) ? page : -1 ,(limit != null) ? limit : -1);  
         iPage.setRecords(dao.selectBySearch(iPage,search,isJoin, isSign));  
         return ResultUtils.getDataForLimit(iPage);  
