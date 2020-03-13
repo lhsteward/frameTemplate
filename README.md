@@ -1,7 +1,7 @@
 # frameTemplate
 基于Springboot+MybatisPlus封装的后台,包含一键生成Model和基础接口  
 
-分页接口  
+分页接口编写方式  
 Dao层  
   List<T> selectBySearch(Page<T> page);  
 Service层  
