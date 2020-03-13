@@ -1,0 +1,42 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/store?allowMultiQueries=true&autoReconnect=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useUnicode=true&serverTimezone=Asia/Shanghai&nullCatalogMeansCurrent=true
+    username: root
+    password: admin
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 20
+      idle-timeout: 600000
+      auto-commit: true
+      pool-name: MyHikariCP
+      max-lifetime: 600000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+
+  main:
+    allow-bean-definition-overriding: true
+
+
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: auto
+  configuration:
+    # 列名自动驼峰
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+  config-location: classpath:mybatis/mybatis.cfg.xml
+  mapper-locations: classpath:mapper/*.xml
+
+
+
+logging:
+  level:
+    org.springframework.web: INFO
+    com.lhc: DEBUG
+    root: INFO
+
