@@ -37,7 +37,7 @@ public class MybatisPlusConfig {
         //配置填充器
         globalConfig.setMetaObjectHandler(new MyMetaObjectHandler());
         sqlSessionFactoryBean.setGlobalConfig(globalConfig);
-        sqlSessionFactoryBean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:mapper/*.xml"));
+//        sqlSessionFactoryBean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:mapper/*.xml"));
         //手动设置session工厂时，需要手动添加分页插件
         Interceptor[] plugins = new Interceptor[1];
         plugins[0] = paginationInterceptor();
